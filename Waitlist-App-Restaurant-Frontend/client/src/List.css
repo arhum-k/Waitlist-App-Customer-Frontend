@@ -1,0 +1,25 @@
+.guestBlock{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 15px;
+    padding-bottom: 20px;
+    background-color: #f2f2f2;
+    font-family: 'Lato', Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+.button{
+    background-color:rgb(83, 187, 212) ;
+    border: none;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    padding: 10px 14px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    background-color:rgb(17, 90, 108) ;
+}
