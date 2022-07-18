@@ -111,19 +111,25 @@ app.post('/', (req,res) => {
  //SEND SMS via TWILIO
  function sendSMS(phoneNum){
 
-    const accountSid = process.env.TWILIO_ACCOUNT_SID;
-    const authToken = process.env.TWILIO_AUTH_TOKEN;
-    const client = require('twilio')("ACbaa8ad98c6c3dfde3f6ac2bda653d1b2", "b23cd6b3bc0c81fa51b632837541dbff");
+    // Download the helper library from https://www.twilio.com/docs/node/install
+// Find your Account SID and Auth Token at twilio.com/console
+// and set the environment variables. See http://twil.io/secure
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')("ACbaa8ad98c6c3dfde3f6ac2bda653d1b2", "2c540813d273274cc2c2b325f44a3e3b");
 
-    client.messages
-    .create({
-        body: 'Your table is ready!',
-        from: '+19706388923',
-        to: "+19255484242" 
-        /* change the 'to' to {phoneNum} and get a real twilio Number */
-    })
-    .then(message => console.log(message.sid))
-        .catch(e => { console.error('Got an error:', e.code, e.message); });
+client.messages
+  .create({
+     body: 'Table Ready',
+     from: '+19706388923',
+     to: '+19255484242'
+   })
+  .then(message => console.log(message.sid));
+
+
+
+
+
 }
 
 //sends customer frontend data to DB
@@ -160,8 +166,9 @@ function sendToDB(data){
 
 
 //START  PORT 
-app.listen(7004, () =>  {
-    console.log("Server started on port 7004")
+const PORT = process.env.PORT || 7004
+app.listen(PORT, () =>  {
+    console.log("Server started on port "+PORT)
   /*   MongoClient.connect(url,
     { useNewUrlParser: true }, (error, result) =>{
         if(error) throw error
