@@ -14,7 +14,7 @@ async function clearGuest(id){
     
 
     //POSTs phone number (id) to backend using /delete
-    const res = await fetch("http://localhost:7004/delete",
+    const res = await fetch("https://vast-depths-43868.herokuapp.com/delete",
         {
             method: 'POST',
             headers: {
@@ -29,7 +29,7 @@ async function sendSMS(phoneNum){
     
 
     //POSTs phone number (id) to backend using /text
-    const res = await fetch("http://localhost:7004/text",
+    const res = await fetch("https://vast-depths-43868.herokuapp.com/text",
         {
             method: 'POST',
             headers: {

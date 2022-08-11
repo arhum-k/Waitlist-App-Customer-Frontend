@@ -25,7 +25,7 @@ function App() {
       const fetchData = async () => {
         
         setClicked(true)
-          const response = await fetch('http://localhost:7004/getData')
+          const response = await fetch('https://vast-depths-43868.herokuapp.com/getData')
           const data = await response.json()
           //console.log(this.state)
           

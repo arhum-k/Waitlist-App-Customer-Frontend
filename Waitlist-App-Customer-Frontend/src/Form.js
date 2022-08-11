@@ -50,7 +50,7 @@ function Form() {
     async function postInfoToBack(e){
         setShowSuccess(true)
         e.preventDefault()
-        const res = await fetch("http://localhost:7004/",
+        const res = await fetch("https://vast-depths-43868.herokuapp.com/",
         {
             method: 'POST',
             headers: {
