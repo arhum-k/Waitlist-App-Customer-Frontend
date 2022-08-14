@@ -3,6 +3,9 @@ import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import './Form.css'
 
+var API_URL="https://vast-depths-43868.herokuapp.com"
+//var API_URL="http://localhost:7004"
+
 function Form() {
 
     const [showSuccess,setShowSuccess] =React.useState(false)
@@ -37,20 +40,20 @@ function Form() {
     }
 
     function handlePhone(event){
-        console.log(event)
+        //console.log(event)
         setFormData((prevForm)=>({
              ...prevForm,
                 phoneNum:event
         }))
     }
     
-    console.log(formData)
+    //console.log(formData)
 
 
     async function postInfoToBack(e){
         setShowSuccess(true)
         e.preventDefault()
-        const res = await fetch("https://vast-depths-43868.herokuapp.com/",
+        const res = await fetch(API_URL+"/",
         {
             method: 'POST',
             headers: {
