@@ -67,7 +67,7 @@ function Form() {
 
   return (
     <>
-    <h4 className="header">Enter your information:</h4>
+    <h4 className="header">Please Sign Up to Join the Waitlist:</h4>
     <form onSubmit={postInfoToBack} >
         <label>Full Name 
         <input
